@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "dee025ba-ecd1-4d5e-a2bf-a11cac0ddc02",
+		"name": "JuiceShopAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetQuantity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/Quantitys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Quantitys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rest/products/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rest",
+						"products",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchOneProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rest/products/search?q=Banana Juice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rest",
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Banana Juice"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"abc@avi\",\"password\":\"abc123\",\"passwordRepeat\":\"abc123\",\"securityQuestion\":{\"id\":2,\"question\":\"Mother's maiden name?\",\"createdAt\":\"2021-11-30T06:04:17.177Z\",\"updatedAt\":\"2021-11-30T06:04:17.177Z\"},\"securityAnswer\":\"def\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"abc@avi\",\"password\":\"abc123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rest/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rest",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WhoAmI-beforeLogin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rest/user/whoami",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rest",
+						"user",
+						"whoami"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WhoAmI-afterLogin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjIsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAYXZpIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTYzODMzNTE3NiwiZXhwIjoxNjM4MzUzMTc2fQ.xn1nHLhjN313s6X7BhtJExBgYZMnj2fVol7vALr8k_cGdUIcfQ0DzTt0wdBLpSbCwn8QVhuNb0sbXfQH1-akKO9XKUrdfmKiaImi9fya-Jir01bVzL-R5zEqcsJoB1MftFRvckeP4EvYc4yALuMqWo98j-8ZNfKZhXN_p9A23uM",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjIsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAYXZpIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTYzODMzNTE3NiwiZXhwIjoxNjM4MzUzMTc2fQ.xn1nHLhjN313s6X7BhtJExBgYZMnj2fVol7vALr8k_cGdUIcfQ0DzTt0wdBLpSbCwn8QVhuNb0sbXfQH1-akKO9XKUrdfmKiaImi9fya-Jir01bVzL-R5zEqcsJoB1MftFRvckeP4EvYc4yALuMqWo98j-8ZNfKZhXN_p9A23uM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/rest/user/whoami",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rest",
+						"user",
+						"whoami"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCartQuantity",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjIsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAYXZpIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTYzODMzNTE3NiwiZXhwIjoxNjM4MzUzMTc2fQ.xn1nHLhjN313s6X7BhtJExBgYZMnj2fVol7vALr8k_cGdUIcfQ0DzTt0wdBLpSbCwn8QVhuNb0sbXfQH1-akKO9XKUrdfmKiaImi9fya-Jir01bVzL-R5zEqcsJoB1MftFRvckeP4EvYc4yALuMqWo98j-8ZNfKZhXN_p9A23uM",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjIsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAYXZpIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTYzODMzNTE3NiwiZXhwIjoxNjM4MzUzMTc2fQ.xn1nHLhjN313s6X7BhtJExBgYZMnj2fVol7vALr8k_cGdUIcfQ0DzTt0wdBLpSbCwn8QVhuNb0sbXfQH1-akKO9XKUrdfmKiaImi9fya-Jir01bVzL-R5zEqcsJoB1MftFRvckeP4EvYc4yALuMqWo98j-8ZNfKZhXN_p9A23uM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"quantity\": 2}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/BasketItems/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"BasketItems",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddBasketItem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjIsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAYXZpIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTYzODMzNTE3NiwiZXhwIjoxNjM4MzUzMTc2fQ.xn1nHLhjN313s6X7BhtJExBgYZMnj2fVol7vALr8k_cGdUIcfQ0DzTt0wdBLpSbCwn8QVhuNb0sbXfQH1-akKO9XKUrdfmKiaImi9fya-Jir01bVzL-R5zEqcsJoB1MftFRvckeP4EvYc4yALuMqWo98j-8ZNfKZhXN_p9A23uM",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MjIsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJhYmNAYXZpIiwicGFzc3dvcmQiOiJlOTlhMThjNDI4Y2IzOGQ1ZjI2MDg1MzY3ODkyMmUwMyIsInJvbGUiOiJjdXN0b21lciIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIwLjAuMC4wIiwicHJvZmlsZUltYWdlIjoiL2Fzc2V0cy9wdWJsaWMvaW1hZ2VzL3VwbG9hZHMvZGVmYXVsdC5zdmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjEtMTItMDEgMDU6MDM6NDYuNjI1ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTYzODMzNTE3NiwiZXhwIjoxNjM4MzUzMTc2fQ.xn1nHLhjN313s6X7BhtJExBgYZMnj2fVol7vALr8k_cGdUIcfQ0DzTt0wdBLpSbCwn8QVhuNb0sbXfQH1-akKO9XKUrdfmKiaImi9fya-Jir01bVzL-R5zEqcsJoB1MftFRvckeP4EvYc4yALuMqWo98j-8ZNfKZhXN_p9A23uM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"BasketId\": 1,\"ProductId\": 1, \"quantity\": 5}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/BasketItems/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"BasketItems",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteItem",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
